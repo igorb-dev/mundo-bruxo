@@ -1,0 +1,196 @@
+@font-face {
+    font-family: 'HarryP'; 
+    src: url('fontes/HARRYP.ttf') format('truetype'),
+}
+
+body {
+    height: 100vh; /* Preenche a altura total da viewport */
+    margin: 0; /* Remove a margem padrão */
+    padding: 0; /* Remove o padding padrão */
+    background-image: url('./img/BGBlack.png');
+    background-size: cover;
+    background-position: center center;
+}
+
+.header-style-one {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.header-style-one .container-header {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-style-one h1 {
+    margin: 0;
+    color: #fff;
+    font-family: "HarryP", sans-serif;
+    font-size: 6rem;
+}
+
+.header-style-one .container-input input {
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 0 1rem; /* Espaçamento interno */
+    border-radius: 12px 0 0 12px; /* Borda arredondada */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos inputs */
+    color: #45474B; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    height: 50px;
+}
+
+.header-style-one .container-input input {
+    outline: none;
+  }
+
+  .header-style-one .container-input button {
+    padding: 0 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 0 12px 12px 0; /* Borda arredondada */
+    background-color: #30475E; /* Cor de fundo do botão */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    height: 50px;
+}
+
+
+.header-style-two {
+    width: 100%;
+    height: 64px;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000;
+    background-image: linear-gradient(180deg, rgba(0, 0, 0, .7) 20%, transparent);
+}
+
+.header-style-two .container-header {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.header-style-two h1 {
+    margin: 0;
+    color: #fff;
+    font-family: "HarryP", sans-serif;
+    font-size: 2.5rem;
+}
+
+.header-style-two .container-input input {
+    width: 30rem; /* Largura dos inputs */
+    border: none; /* Remove a borda padrão */
+    padding: 0 1rem; /* Espaçamento interno */
+    border-radius: 12px 0 0 12px; /* Borda arredondada */
+    color: #45474B; /* Cor do texto */
+    font-size: 1rem; /* Tamanho da fonte */
+    box-sizing: border-box; /* Inclui padding e border na largura total */
+    height: 40px;
+}
+
+.header-style-two .container-input input {
+    outline: none;
+  }
+
+.header-style-two .container-input button {
+    padding: 0 1.2rem; /* Espaçamento interno do botão */
+    border: none; /* Remove a borda padrão */
+    border-radius: 0 12px 12px 0; /* Borda arredondada */
+    background-color: #30475E; /* Cor de fundo do botão */
+    color: #F5F7F8; /* Cor do texto do botão */
+    font-size: 1rem; /* Tamanho da fonte */
+    cursor: pointer; /* Muda o cursor para indicar que é clicável */
+    height: 40px;
+}
+
+section {
+    display: flex; /* Usa Flexbox para layout */
+    flex-direction: column; /* Alinha os itens na vertical */
+    align-items: center; /* Centraliza os itens horizontalmente */
+    margin: 20px auto 3rem auto;
+}
+
+.resultados-pesquisa {
+    width: 60rem; /* Largura máxima da caixa de resultados */
+    height: calc(100vh - 180px); /* Altura máxima da caixa de resultados */
+    overflow-y: auto; /* Adiciona rolagem vertical se necessário */
+    margin-top: 1rem; /* Espaçamento acima da caixa de resultados */
+    padding: 1rem; /* Espaçamento interno */
+    border-radius: 0.6rem; /* Borda arredondada */
+}
+
+.item-resultado {
+    width: 80%;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 0.6rem; /* Borda arredondada */
+    padding: 1rem; /* Espaçamento interno */
+    margin-bottom: 1rem; /* Espaçamento abaixo dos itens */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    display: flex;
+    gap: 32px;
+}
+
+.container-img {
+    width: 30%;
+}
+
+.empt {
+    display: none;
+}
+
+.busca-vazia {
+    color: #fff;
+    font-size: 20px;
+}
+
+.container-img img {
+    width: 100%;
+    border-radius: 12px;
+}
+
+.container-dados {
+    width: 65%;
+    color: #fff;
+    letter-spacing: 1.1px;
+}
+
+.container-dados h2 {
+    font-size: 1.5rem; /* Tamanho da fonte */
+    color: #fff; /* Cor do texto */
+}
+
+.descricao-meta {
+    color: #fff; /* Cor do texto */
+    margin: 0.5rem 0; /* Margem acima e abaixo */
+    letter-spacing: 1.1px;
+}
+
+footer {
+    background-color: #F5F7F8; /* Cor de fundo do rodapé */
+    color: #45474B; /* Cor do texto */
+    text-align: center; /* Alinha o texto ao centro */
+    padding: 0; /* Espaçamento interno */
+    width: 100%; /* Largura total da página */
+    position: absolute; /* Posiciona o rodapé */
+    bottom: 0; /* Alinha ao fundo da página */
+    font-size: 1rem; /* Tamanho da fonte */
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    background-color: #141414;
+    background-image: linear-gradient(360deg, rgba(0, 0, 0, .7) 10%, transparent);
+    color: #fff;
+}
