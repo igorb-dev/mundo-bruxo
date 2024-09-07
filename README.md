@@ -1,4 +1,4 @@
-# Projeto de Busca de Personagens
+# Mundo Bruxo - Busca de Personagens
 
 Este projeto é uma aplicação de pesquisa que permite buscar informações de personagens, exibindo detalhes como nome, família, idade e casa. A interface exibe os resultados dinamicamente conforme a pesquisa é realizada, e caso nenhum resultado seja encontrado, uma mensagem informando a ausência de correspondências é exibida.
 
