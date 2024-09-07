@@ -1,54 +1,48 @@
 function pesquisar() {
-    let section = document.getElementById("resultados-pesquisa");
-    let campoPesquisa = document.getElementById("campo-pesquisa").value
-    let campoHeader = document.getElementById("header")
+  // Obtém os elementos HTML relevantes da página
+  let section = document.getElementById("resultados-pesquisa"); // Seção onde os resultados serão exibidos
+  let campoPesquisa = document.getElementById("campo-pesquisa").value; // Valor do campo de pesquisa
+  let campoHeader = document.getElementById("header"); // Elemento de cabeçalho
 
-    if (!campoPesquisa) {
-        campoHeader.classList.remove('header-style-two');
-        campoHeader.classList.add('header-style-one');
-        section.classList.add('empt');
-    }
+  // Verifica se o usuário inseriu algum termo para pesquisa
+  if (!campoPesquisa) {
+    // Se não houver termo, remove a classe de estilo para resultados e adiciona a classe para resultados vazios
+    campoHeader.classList.remove('header-style-two');
+    campoHeader.classList.add('header-style-one');
+    section.classList.add('empt');
+  } else {
+    // Se houver termo, remove a classe para resultados vazios e adiciona a classe de estilo para resultados
+    campoHeader.classList.remove('header-style-one');
+    section.classList.remove('empt');
+    campoHeader.classList.add('header-style-two');
 
-    campoPesquisa = campoPesquisa.toLowerCase()
-
+    // Inicializa a string para armazenar os resultados
     let resultados = "";
-    let nome = ""; 
-    let casa = "";
-    let familia = "";
 
-    if (campoPesquisa) {
-        campoHeader.classList.remove('header-style-one');
-        section.classList.remove('empt');
-        campoHeader.classList.add('header-style-two');
+    // Itera sobre os dados e busca por correspondências
+    for (let dado of dados) {
+      // Normaliza os dados para comparação (converte para minúsculas)
+      let nome = dado.nome.toLowerCase();
+      let casa = dado.casa.toLowerCase();
+      let familia = dado.familia.toLowerCase();
 
-        for (let dado of dados) {
-            nome = dado.nome.toLowerCase()
-            casa = dado.casa.toLowerCase()
-            familia = dado.familia.toLowerCase()
-
-            if (nome.includes(campoPesquisa) || casa.includes(campoPesquisa) || familia.includes(campoPesquisa)) {
-
-                resultados += `
-                <div class="item-resultado">
-                    <div class="container-img">
-                        <img src=${dado.imagem} alt=${dado.nome}>
-                    </div>
-                    <div class="container-dados">
-                        <h2>${dado.nome}</h2>
-                        <p>Família: ${dado.familia}</p>
-                        <p class="descricao-meta">${dado.descricao}</p>
-                        <p>Idade: ${dado.idade}</p>
-                        <p>Casa: ${dado.casa}</p>
-                    </div>
-                </div>
-            `;
-            }
-        }
+      // Verifica se o termo de pesquisa está presente em algum dos campos
+      if (nome.includes(campoPesquisa) || casa.includes(campoPesquisa) || familia.includes(campoPesquisa)) {
+        // Cria o HTML para um resultado e adiciona à string de resultados
+        resultados += `
+          <div class="item-resultado">
+            </div>
+        `;
+      }
     }
 
+    // Verifica se foram encontrados resultados
     if (!resultados) {
-        resultados = `<p class="busca-vazia">Nada foi encontrado</p>`
+      // Se não houver resultados, cria uma mensagem de erro
+      resultados = `<p class="busca-vazia">Nada foi encontrado</p>`;
     }
 
+    // Atualiza o conteúdo da seção de resultados com os resultados encontrados ou a mensagem de erro
     section.innerHTML = resultados;
+  }
 }
